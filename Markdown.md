@@ -103,16 +103,18 @@
 
 2. 常见字体 <a id="font"></a>
 （受设备和软件限制）
-    |中文名|英文名|
-    |:--:|:--:|
-    |黑体|SimHei：`<font face='SimHei'>`|
-    |宋体|SimSun：`<font face='SimSun'>`|
-    |新宋体|NSimSun：`<font face='NSimSun'>`|
-    |仿宋|FangSong：`<font face='FangSong'>`|
-    |楷体|KaiTi：`<font face='KaiTi'>`|
-    |仿宋_GB2312|FangSong_GB2312：`<font face='FangSong_GB2312'>`|
-    |楷体_GB2312|KaiTi_GB2312：`<font face='KaiTi_GB2312'>`|
-    |微软雅黑|Microsoft Yahei：`<font face='Microsoft YaHei'>`|
+
+| 中文名 | 英文名 | 
+| :----------: | :---------------------: | 
+| 黑体 | SimHei | 
+| 宋体 | SimSun | 
+| 新宋体 | NSimSun | 
+| 仿宋 | FangSong | 
+| 楷体 | KaiTi | 
+| 仿宋_GB2312 | FangSong_GB2312 | 
+| 楷体_GB2312 | KaiTi_GB2312 | 
+| 微软雅黑 | Microsoft YaHei |
+
 ```html
 <font face='KaiTi' color='' size='5'>这段话会变成楷体，非常适合用来写名人名言或者引用。</font> 
 ```
