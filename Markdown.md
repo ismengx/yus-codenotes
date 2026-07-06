@@ -253,8 +253,9 @@ ___
     [img2]:https://t7.baidu.com/it/u=2397542458,3133539061&fm=193&f=GIF
 
 3. 以html高级插入 <a id="html-photo"></a>
+`width`是图片尺寸，`align`是对齐方式  
 ```html
-<img src="图片链接" width="50%" align="center" alt="描述">
+<img src="图片链接" width=500 align="center" alt="描述">
 ```
 
 ## To-Do代办 <a id="todo"></a>

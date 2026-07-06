@@ -29,7 +29,7 @@ yus@yus:~$
     -rwxr-xr-x 1 root root   54  7月  5 11:49 SwitchShell.sh
     # 读写运行权限 硬连接数 所有者 所属组 大小 时间 文件名 
     ```
-  `-a` 列出所有文件（包括隐藏文件）
+  `-a` （all）列出所有文件（包括隐藏文件）
 
 * test `[` 检验文件存在性
 
@@ -87,6 +87,52 @@ sed -i 's/要修改的内容/修改后的内容/g' 1.txt
 * vim/vi  
 默认进入**浏览模式**，按`i`键进入**编辑模式**  
 按`esc`退出编辑模式，输入`:q`退出，输入`:q!`**强制**退出
+
+## 系统级命令
+* systemctl
+* ss
+
+## 远程shell
+1. 配置远程ssh服务
+```shell
+sudo apt install openssh-server
+sudo systemctl enable ssh && sudo systemctl start ssh
+ssh-keygen #生成在/home/$USER中 还需要在本地运行下一行代码
+ssh-copyid user@hostname
+```
+
+2. 以Xshell为例连接远程ssh  
+需要注意的是，在远程主机中生成公钥后只需运行`ssh-copyid`即可，**无需也不能**将公钥*导入Xshell*
+
+<img src="https://pub-7e5b8ad9a5864c57932040aa1e7b0318.r2.dev/ssh-1.png" width=500 alt="SSH图1">
+<img src="https://pub-7e5b8ad9a5864c57932040aa1e7b0318.r2.dev/ssh-2.png" width=400 alt="SSH图2">  
+
+2. ssh服务常见语法  
+    * 在本地终端中连接远程服务器  
+    `-p`指定端口  
+    `-i`使用密钥（推荐）  
+
+例如：
+```shell
+ssh user@hostname
+ssh -i /.../id_rsa user@hostname
+```
+
+3. 利用`rsync`或`scp`与远程主机互传文件  
+`rsync`适用于**大文件**传输，`scp`适用于**小文件*  
+    ```shell
+    scp ~/1.txt user@hostname:~/
+    rsync -avz ~/1.txt user@hostname:~/
+    ```  
+
+
+    * rsync语法  
+    `-a`  保留属性复制（归档模式）  
+    `-v` 可视化输出  
+    `-z`  传输时压缩（远程推荐）  
+    `--partial`  启用断点续传  
+    `--progress`  显示进度
+
 
 ## 通用语法
 ### 输入输出
@@ -178,3 +224,7 @@ echo $h
 ```shell
 #!/bin/bash
 set -eux -o pipefall
+```
+
+## 正则表达式
+## 通配符扩展
